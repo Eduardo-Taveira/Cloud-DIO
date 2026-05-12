@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Minha primeira Stack CloudFormation - Projeto DIO - Eduardo'
+
+Resources:
+  MeuBucketS3:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Sub 'dio-cloudformation-eduardo-${AWS::AccountId}'
+      VersioningConfiguration:
+        Status: Enabled
+
+Outputs:
+  NomeDoBucket:
+    Value: !Ref MeuBucketS3
+    Description: Nome do bucket criado
